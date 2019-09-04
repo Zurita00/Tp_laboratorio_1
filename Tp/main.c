@@ -13,30 +13,63 @@ int main()
     scanf("%d", &A);
     printf("Ingrese el segundo numero: ");
     scanf("%d", &B);
-    fflush(stdin);
-    printf("Ingrese la operacion que desea realizar: ");
-    printf( "\na.Sumar \nb.Restar \nc.Multiplicar \nd.Division \ne.Factorial\n\n" );
 
+    printf("Ingrese la operacion que desea realizar: ");
+    printf( "\na.Sumar \nb.Restar \nc.Multiplicar \nd.Division \ne.Factorial \nf.Salir\n" );
+    fflush(stdin);
     scanf("%c", &operacion);
 
-        switch (operacion)
+    switch (operacion)
+    {
+    case 'a':
+        resultado = sumar( A, B );
+        printf("El resultado de %d + %d es: %2.f", A, B, resultado);
+        break;
+    case 'b':
+        resultado = restar( A, B);
+        printf("El resultado de %d - %d es: %2.f", A, B, resultado);
+        break;
+    case 'c':
+        resultado = multiplicar( A, B );
+        printf("El resultado de %d * %d es: %2.f", A, B, resultado);
+        break;
+    case 'd':
+        if( B != 0 )
         {
-        case 'a':
-            resultado = sumar( A, B );
-        break;
-        case 'b':
-            resultado = restar( A, B);
-        break;
-        case 'c':
-            resultado = multiplicar( A, B );
-        break;
-        case 'd':
             resultado = division( A, B);
+
+            printf("El resultado de %d / %d  es: %2.f", A, B, resultado);
+        }
+        else
+        {
+
+            printf("No puede dividirse por 0");
+        }
         break;
-        case 'e':
+    case 'e':
+        if( A <0)
+        {
+            printf("\nEl factorial de %d no se puede realizar \n",A);
+        }
+        else
+        {
             resultado = factorial(A);
-            break;
+            printf("\nEl factorial de %d es: %.2f\n", A, resultado);
+        }
+        if(B <0)
+        {
+            printf("\nEl factorial de %d no se puede realizar \n",B);
+        }
+        else
+        {
+            resultado = factorial(B);
+            printf("\nEl factorial de %d es: %.2f\n", B, resultado);
+        }
+
+        break;
+    case 'f':
+        printf("Ha salido");
     }
-    printf("El resultado es %f", resultado);
+
 
 }
