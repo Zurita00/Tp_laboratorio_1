@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1567564151 source:c:\users\melissa lourdes\desktop\tppppp\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Operaciones.h"
+
+1567560087 source:c:\users\melissa lourdes\desktop\tppppp\untitled1.c
+	<stdio.h>
+	"Operaciones.h"
+
+1567562954 c:\users\melissa lourdes\desktop\tppppp\operaciones.h
+	<stdio.h>
+
+1567562117 source:c:\users\melissa lourdes\desktop\tppppp\operaciones.c
+	<stdio.h>
+	"Operaciones.h"
+
+1567624834 source:c:\users\melissa lourdes\desktop\tp\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Operaciones.h"
+
+1567625160 c:\users\melissa lourdes\desktop\tp\operaciones.h
+	<stdio.h>
+
+1567625160 source:c:\users\melissa lourdes\desktop\tp\operaciones.c
+	<stdio.h>
+	"Operaciones.h"
+
