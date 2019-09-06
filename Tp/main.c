@@ -4,92 +4,106 @@
 
 int main()
 {
-    /**< Creo las variables para las funciones */
-    int A;
-    int B;
-    float resultado;
-    char operacion;
+    float A = 0;
+    float B = 0;
+    float suma;
+    float resta;
+    float multiplicacion;
+    float division;
+    float factorialA;
+    float factorialB;
+    char salir = 's';
+    int opcion;
 
     do
     {
-        printf("Ingrese el primer numero: \n"); /**< Pido el primer numero */
-        scanf("%d", &A);
-        printf("Ingrese el segundo numero: \n"); /**< Pido el segundo numero */
-        scanf("%d", &B);
+        printf("CALCULADORA\n");
+        printf("\n 1.Ingresar 1er operando (A=%2.f)\n ",A);
+        printf("\n 2.Ingresar 2do operando (B=%2.f)\n", B);
+        printf("\n 3.Calcular las operaciones: \n");
+        printf("\n      Sumar(A+B)");
+        printf("\n      Restar(A-B)");
+        printf("\n      Multiplicar (A*B)");
+        printf("\n      Dividir(A/B)");
+        printf("\n      Factorial(A! B!)");
+        printf("\n\n 4.Informar resultados de las operaciones.");
+        printf("\n\n 5.Salir \n");;
+        printf("\n Ingrese una de las siguientes opciones:");
 
-        printf("Ingrese la operacion que desea realizar: \na.Sumar \nb.Restar \nc.Multiplicar \nd.Division \ne.Factorial \nf.Salir\n" );
-        /**< Ingreso las operaciones para que el usuario pueda elegir. */
-        fflush(stdin);
+        scanf("%d", &opcion);
 
-        scanf("%c", &operacion);
-
-        switch (operacion)
+        switch (opcion)
         {
-        case 'a':
-            resultado = sumar( A, B );
-            printf("El resultado de %d + %d es: %2.f\n", A, B, resultado);
+        case 1:
+            system("cls");
+            printf("\nIngrese el primer operando: \n");
+            scanf("%f", &A);
             break;
-            /**< Si el usuario elije la opcion a, se realiza la funcion suma */
-        case 'b':
-            resultado = restar( A, B);
-            printf("El resultado de %d - %d es: %2.f\n", A, B, resultado);
+
+            system("pause");
+
+        case 2:
+            system("cls");
+            printf("Ingrese el segundo operando: \n");
+            scanf("%f", &B);
             break;
-            /**< Si el usuario elije la opcion b, se realiza la funcion restar */
-        case 'c':
-            resultado = multiplicar( A, B );
-            printf("El resultado de %d * %d es: %2.f\n", A, B, resultado);
+
+
+        case 3:
+            system("cls");
+            suma = sumar( A, B );
+            resta = restar( A, B);
+            multiplicacion = multiplicar( A, B );
+            division = dividir( A, B);
+            factorialA = factorial(A);
+            factorialB = factorial(B);
+
+            printf("Operaciones calculadas.\n");
+            system("pause");
             break;
-            /**< Si el usuario elije la opcion c, se realiza la funcion multiplicar */
-        case 'd':
-            if( B != 0 )
-            {
-                resultado = division( A, B);
-                printf("El resultado de %d / %d  es: %2.f\n", A, B, resultado);
-            }
-            /**< Si el usuario elije la opcion a, se realiza la funcion division */
-            else
+
+        case 4:
+
+            printf("El resultado de %2.f + %2.f es: %2.f\n", A, B, suma);
+            printf("El resultado de %2.f - %2.f es: %2.f\n", A, B, resta);
+            printf("El resultado de %2.f * %2.f es: %2.f\n", A, B, multiplicacion);
+            if( division != 0 )
             {
                 printf("No puede dividirse por 0");
             }
-            break;
-            /**< Si el usuario ingresa el numero 0 en B, la division no puede realizarse */
-        case 'e':
-            if( A <0)
-            {
-                printf("\nEl factorial de %d no se puede realizar \n",A);
-            }
-            /**< Si el numero ingresado por el usuario es menor a 0, el factorial no puede realizarse */
-            else
-            {
-                resultado = factorial(A);
-                printf("\nEl factorial de %d es: %.2f\n", A, resultado);
-            }
-            /**< Si el usuario elije la opcion a, se realiza factorial de A*/
-            if(B <0)
-            {
-                printf("\nEl factorial de %d no se puede realizar \n",B);
-            }
-            else
-            {
-                resultado = factorial(B);
-                printf("\nEl factorial de %d es: %.2f\n", B, resultado);
-            }
-            break;
-            /**< Lo mismo ocurre en este if y else */
 
-        case 'f':
-            printf("Salida.\n");
+            else
+            {
+                printf("El resultado de %2.f / %2.f  es: %2.f\n", A, B, division);
+            }
+
+            if( A > 0 || B > 0)
+            {
+                factorial(A);
+                factorial(B);
+                printf("\nEl factorial de %2.f y %2.f es: %.2f\n y %.2f\n", A, B,factorialA, factorialB );
+            }
+
+            else
+            {
+                printf("\nEl factorial de %2.f no se puede realizar\n",A);
+                printf("\nEl factorial de %2.f no se puede realizar\n",B);
+            }
+            system("pause");
             break;
-/**< Si el usuario elije la opcion a, se realiza la funcion suma */
+
+        case 5:
+            salir = 'n';
+            system("cls");
+            break;
+
         default:
-            printf("No ha ingresado ninguna de las opciones.");
+            printf("\nNo ingreso una opcion valida\n\n");
+            system("pause");
         }
 
-        system("pause"); /**< Pausa el sistema */
-
+    system("cls");
     }
-    while ( operacion != 'f');
-    /**< Si el usuario elije la opcion a, se realiza la funcion suma */
-
+    while ( salir != 'n');
     return 0;
 }

@@ -1,94 +1,62 @@
 #include <stdio.h>
 #include "Operaciones.h"
 
-int sumar ( int A, int B)
+
+float sumar ( float A, float B)
 {
-    float resultado;
+    float suma;
 
-    resultado = A + B;
+    suma = A + B;
 
-    return resultado;
+    return suma;
 }
-/** \brief Funcion creada para realizar la suma y pedir los numeros.
- *
- * \param Creo la variable resultado.
- * \param Sumo las variables A y B dandole el valor a resultado.
- * \return Devuelve el resultado.
- *
- */
 
-int restar (int A, int B)
+float restar (float A, float B)
 {
 
-    float resultado;
+    float resta;
 
-    resultado = A - B;
+    resta = A - B;
 
-    return resultado;
+    return resta;
 }
-/** \brief Funcion creada para realizar la suma y pedir los numeros.
- *
- * \param Creo la variable resultado.
- * \param Realizo la operacion de la resta dandole valor a resultado.
- * \return Devuelve el resultado.
- */
 
-int multiplicar (int A, int B)
+
+float multiplicar (float A, float B)
 
 {
-    float resultado;
+    float multiplicacion;
 
-    resultado = A * B;
+    multiplicacion = A * B;
 
-    return resultado;
+    return multiplicacion;
 
 }
-/** \brief Funcion creada para realizar la multiplicacion y pedir los numeros.
- *
- * \param Creo la variable resultado
- * \param Multiplico A por B.
- * \return Devuelve el resultado.
- *
- */
-float division (int A, int B)
+
+float dividir(float A, float B)
 
 {
-    float resultado;
+    float division;
 
-    resultado = A / B;
+   division = A / B;
 
-    return resultado;
+    return division;
 }
-/** \brief Funcion creada para realizar la division y pedir las variables A y B.
- *
- * \param Creo la variable resultado.
- * \param Division.
- * \return Devuelve el resultado.
- *
- */
-int factorial ( int A)
+
+float factorial ( float A)
 
 {
-    int resultado;
+    float factorialA;
 
-    if( A == 0)
+    if( A == 0) /**< Si A es igua a 0 devolvera el valor 1 */
     {
-        resultado = 1;
+        factorialA = 1;
     }
-    else
+    else /**< Si no es asi se realiza A por factorial */
     {
-        resultado = A * factorial(A-1);
+        factorialA = A * factorial(A-1); /**< Primero al valor A se le resta 1 y al numero que se llega se lo multiplica por A */
     }
 
-    return resultado;
-
-/** \brief Realizo la funcion de factorial con un entero.;
- *
- * \param Creo la variable resultado.
- * \param Si el entero A es igual a 0, el resultado siempre sera 1
- * \param Si no lo es realizo la factorial de A
- * \return Devuelve el resultado
- *
- */
+    return factorialA; /**< Retorna factorial de A */
 }
 
