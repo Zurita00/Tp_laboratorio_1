@@ -38,7 +38,10 @@ float dividir(float A, float B)
 {
     float division;
 
-   division = A / B;
+    if (B != 0){
+
+    division = A / B;
+    }
 
     return division;
 }

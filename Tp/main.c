@@ -67,7 +67,7 @@ int main()
             printf("El resultado de %2.f + %2.f es: %2.f\n", A, B, suma);
             printf("El resultado de %2.f - %2.f es: %2.f\n", A, B, resta);
             printf("El resultado de %2.f * %2.f es: %2.f\n", A, B, multiplicacion);
-            if( division != 0 )
+            if( division == 0 )
             {
                 printf("No puede dividirse por 0");
             }
@@ -98,7 +98,7 @@ int main()
             break;
 
         default:
-            printf("\nNo ingreso una opcion valida\n\n");
+            printf("\nNo ingresó una opcion valida\n\n");
             system("pause");
         }
 
